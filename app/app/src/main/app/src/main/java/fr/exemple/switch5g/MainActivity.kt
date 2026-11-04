@@ -81,15 +81,16 @@ class MainActivity : Activity() {
         Pair(-1, e.toString())
     }
 
-    private fun openNetworkSettings() {
+        private fun openNetworkSettings() {
         try {
             startActivity(Intent(Settings.ACTION_DATA_ROAMING_SETTINGS)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-        } catch (_: Exception) {
+        } catch (e: Exception) {
             startActivity(Intent(Settings.ACTION_SETTINGS)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
         }
     }
+
 
     private fun toast(msg: String) =
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
